@@ -7,7 +7,7 @@
 
 <%- include('../partials/nav-products.ejs') %>
 
-<div class="jumbotron jumbotron-fluid cart-bg col-sm">
+<div class="jumbotron jumbotron-fluid cart-bg col-sm rounded">
     <div class="container">
         <h1 class="display-4">Shopping Cart</h1>
     </div>
@@ -85,7 +85,7 @@
                                                                 <input type="hidden" name="_id" value="<%=cartItems._id%>">
                                                                 <input type="hidden" name="price" value="<%=cartItems.price%>">
 <!--                                                                <div class="main-press icon-ctrl"><input type="submit"  class="icon-ctrl fa fa-ban fa-1x" value="&#xf05e"></div>-->
-                                                                <div><input type="submit"  class="btn btn-sm btn-danger width" value="Delete"></div>
+                                                                <div><input type="submit"  class="btn btn-sm btn-danger width" value="Remove"></div>
 
                                                             </form>
                                                         </div>
@@ -95,14 +95,15 @@
 
                                                     <%})%>
                                                     <%} else {%>
-                                                        <h1>Your cart is super empty.</h1>
+                                                        <h1>Your cart is super empty right now.</h1>
                                                     <%}%>
                                                 </tr>
                                                 </tbody>
                                             </table>
 
+<!--                                        <hr>-->
 
-                                            <div class="card-body">
+                                            <div class="card-body border border-dark rounded">
                                                 <form action="/pay" method="POST">
                                                     <% if (cartItems){%>
                                                         <%var sum = 0;%>
@@ -115,10 +116,11 @@
                                                         <input type="hidden" name="totalprice" value="<%=sum%>">
                                                     <%}%>
 
-                                                    <button type="submit" id ="paypal-button" class="btn btn-success float-md-right main-press"> Make Purchase <i class="fa fa-chevron-right"></i></button>
+                                                    <button type="submit" id ="paypal-button" class="btn btn-success float-md-right main-press"> Checkout <i class="fa fa-chevron-right"></i></button>
                                                 </form>
 
                                                 <a href="./products-display" class="main-press btn btn-outline-dark"><i class="fa fa-chevron-left"></i> Continue Shopping</a>
+<!--                                                <a href="./products-display" class="hide-icon btn btn-outline-dark">Continue Shopping</a>-->
                                                 <a href="./products-display" class="hide-icon btn btn-outline-dark mt-1">Continue Shopping</a>
                                             </div>
                                         </div>
